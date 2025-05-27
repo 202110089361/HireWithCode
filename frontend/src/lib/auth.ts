@@ -3,7 +3,7 @@ import {
   getUserProfile,
   registerWithEmailAndPassword,
   loginWithEmailAndPassword,
-  AuthResponse,
+  type AuthResponse,
   logout,
 } from './api';
 import { storage } from './utils';

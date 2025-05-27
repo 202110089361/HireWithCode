@@ -1,20 +1,8 @@
 import { useState } from 'react';
 
 export default function CompleteChallengePage() {
-  const [formData, setFormData] = useState({
-    githubRepoUrl: '',
-    vercelUrl: ''
-  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,17 +10,21 @@ export default function CompleteChallengePage() {
 
     try {
       // 这里可以添加API调用来提交作品
-      console.log('提交的作品:', formData);
+      const submissionData = {
+        githubRepoUrl: 'https://github.com/202110089361/HireWithCode',
+        vercelUrl: 'hire-with-code.vercel.app'
+      };
+      console.log('提交的作品:', submissionData);
 
       // 获取之前保存的用户信息
       const userInfo = localStorage.getItem('challengeUserInfo');
-      const submissionData = {
+      const fullSubmissionData = {
         ...JSON.parse(userInfo || '{}'),
-        ...formData,
+        ...submissionData,
         submittedAt: new Date().toISOString()
       };
 
-      console.log('完整提交数据:', submissionData);
+      console.log('完整提交数据:', fullSubmissionData);
 
       // 模拟API调用延迟
       await new Promise(resolve => setTimeout(resolve, 1500));

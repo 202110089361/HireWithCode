@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 export default function AcceptChallengePage() {
   const [formData, setFormData] = useState({
-    githubId: '',
-    email: ''
+    githubId: '202110089361',
+    email: '1903445178@qq.com'
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();

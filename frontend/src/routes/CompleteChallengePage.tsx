@@ -87,16 +87,7 @@ export default function CompleteChallengePage() {
               <label htmlFor="vercelUrl" className="block text-sm font-medium text-gray-700 mb-2">
                 Vercel 在线体验地址
               </label>
-              <input
-                type="url"
-                id="vercelUrl"
-                name="vercelUrl"
-                value={formData.vercelUrl}
-                onChange={handleInputChange}
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="https://your-project.vercel.app"
-              />
+              <p className='text-[14px]'>hire-with-code.vercel.app</p>
             </div>
 
             <button
